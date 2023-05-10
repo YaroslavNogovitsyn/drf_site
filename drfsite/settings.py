@@ -36,7 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'women.apps.WomenConfig'
+    'rest_framework.authtoken',
+    'djoser',
+    'women.apps.WomenConfig',
 ]
 
 MIDDLEWARE = [
@@ -125,7 +127,12 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     ],
-    'DEFAULT_PERMISSOIN_CLASSES': [
-        'rest_framework.permission.IsAuthenticated'
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permission.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ]
 }
