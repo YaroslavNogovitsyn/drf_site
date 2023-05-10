@@ -1,3 +1,4 @@
 Django==3.2.13
 djangorestframework==3.14.0
 djoser==2.2.0
+PyJWT==2.7.0
